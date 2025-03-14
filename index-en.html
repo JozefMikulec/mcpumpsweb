@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McPumps - Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: url('images/water-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        header {
+            background-color: rgba(0, 64, 128, 0.8);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+        }
+        .logo {
+            height: 50px;
+        }
+        section {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact {
+            background-color: rgba(244, 244, 244, 0.9);
+            padding: 20px;
+        }
+        footer {
+            background-color: rgba(0, 64, 128, 0.8);
+            color: white;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .solutions-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .solution {
+            background-color: rgba(227, 242, 253, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .partners img {
+            width: 150px;
+            margin: 10px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="McPumps_Logo.jpg" alt="McPumps Logo" class="logo"> 
+        <div>McPumps - Professional Solutions for Water Management</div>
+        <div class="language-switch">
+            <a href="index.html">
+                <img src="images/slovak-flag.png" alt="Slovenská verzia">
+            </a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a family-owned company specializing in sales and delivery of solutions for water management. The company owner has over 15 years of experience in providing solutions for potable water supply and wastewater management. Throughout his extensive career in the industry, he has successfully delivered numerous technology solutions and implemented the most demanding applications for many satisfied customers in the municipal water sector.</p>
+    </section>
+
+    <section id="solutions">
+        <h2>Our Solutions</h2>
+        <div class="solutions-container">
+            <div class="solution">
+                <h3>Municipal Water Management Solutions</h3>
+                <p>We provide pumping technology and solutions designed for urban and municipal water companies to ensure efficient management and utilization of water resources.</p>
+                <img src="images/komunalne.jpg" alt="Municipal Solutions" width="100%">
+            </div>
+            <div class="solution">
+                <h3>Residential Solutions</h3>
+                <p>Our residential solutions include pumps for irrigation, water extraction from wells or boreholes, and efficient use of collected rainwater.</p>
+                <img src="images/domace.jpg" alt="Residential Solutions" width="100%">
+            </div>
+        </div>
+    </section>
+
+    <section id="partners" class="partners">
+        <h2>Our Partners</h2>
+        <p>We cooperate with leading manufacturers and suppliers of pumps and with the most experienced technological companies in Slovakia and in Czech republic to bring you the best solutions.If you are looking for a reliable sales representation or partner in Slovakia, please do not hesitate to contact us. </p>
+        <img src="images/partner1.png" alt="Partner 1">
+        <img src="images/partner2.png" alt="Partner 2">
+    </section>
+
+     <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@mcpumps.sk</p>
+        <p>Phone: +421 905 693 348</p>
+        <form action="https://formspree.io/f/mzzebnlg" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+	    <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9 +]{9,15}" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 McPumps - All Rights Reserved
+    </footer>
+</body>
+</html>
