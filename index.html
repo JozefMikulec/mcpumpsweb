@@ -134,16 +134,44 @@
             <button type="submit">Odoslať</button>
         </form>
     </section>
-<!-- AI Asistent ako bublina – vlož pred </body> -->
-<script>
-  window.chatbaseConfig = {
-    chatbotId: "XDWhVufdW4ONlsaJRtM0T"
-  }
-</script>
-<script src="https://www.chatbase.co/embed.min.js" id="chatbase-script" defer></script>
+
 
     <footer>
         &copy; 2025 McPumps - Všetky práva vyhradené
     </footer>
+    <!-- Chatbase AI widget – vlož sem -->
+    <script>
+    (function(){
+      if(!window.chatbase || window.chatbase("getState") !== "initialized"){
+        window.chatbase = (...arguments) => {
+          if (!window.chatbase.q) {
+            window.chatbase.q = []
+          }
+          window.chatbase.q.push(arguments)
+        };
+        window.chatbase = new Proxy(window.chatbase, {
+          get(target, prop) {
+            if (prop === "q") {
+              return target.q
+            }
+            return (...args) => target(prop, ...args)
+          }
+        })
+      }
+      const onLoad = function () {
+        const script = document.createElement("script");
+        script.src = "https://www.chatbase.co/embed.min.js";
+        script.id = "XDWhVufdW4ONlsaJRtM0T";
+        script.domain = "www.chatbase.co";
+        document.body.appendChild(script)
+      };
+      if (document.readyState === "complete") {
+        onLoad()
+      } else {
+        window.addEventListener("load", onLoad)
+      }
+    })();
+    </script>
+
 </body>
 </html>
