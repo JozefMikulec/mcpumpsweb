@@ -3,15 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B567QM2NZN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-B567QM2NZN');
-</script>
     <title>McPumps - Úvodná stránka</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <style>
@@ -34,10 +25,33 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 40px;
+            gap: 16px;
         }
         .logo {
             height: 50px;
         }
+
+        /* ✅ NOVÉ: pravá časť hlavičky (tlačidlo + vlajka) */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .nav-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            white-space: nowrap;
+        }
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
         section {
             padding: 40px;
             max-width: 900px;
@@ -77,16 +91,43 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* ✅ NOVÉ: aby formulár vyzeral OK */
+        form input, form textarea {
+            width: min(520px, 95%);
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        form button {
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(0, 64, 128, 0.9);
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background: rgba(0, 64, 128, 1);
+        }
     </style>
 </head>
 <body>
     <header>
         <img src="McPumps_Logo.jpg" alt="McPumps Logo" class="logo">
         <div>McPumps - Profesionálne riešenia pre vodné hospodárstvo</div>
-        <div class="language-switch">
-            <a href="index-en.html">
-                <img src="images/uk-flag.png" alt="Anglická verzia">
-            </a>
+
+        <!-- ✅ NOVÉ: tlačidlo KEENON + vlajka vpravo -->
+        <div class="header-right">
+            <a class="nav-btn" href="keenon.html">KEENON Robotics</a>
+            <div class="language-switch">
+                <a href="index-en.html">
+                    <img src="images/uk-flag.png" alt="Anglická verzia">
+                </a>
+            </div>
         </div>
     </header>
 
@@ -123,55 +164,24 @@
         <p>Email: info@mcpumps.sk</p>
         <p>Telefón: +421 905 693 348</p>
         <form action="https://formspree.io/f/mzzebnlg" method="POST">
-            <label for="name">Meno:</label>
+            <label for="name">Meno:</label><br>
             <input type="text" id="name" name="name" required><br>
-            <label for="email">Email:</label>
+
+            <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br>
-            <label for="phone">Telefón:</label>
+
+            <label for="phone">Telefón:</label><br>
             <input type="tel" id="phone" name="phone" pattern="[0-9 +]{9,15}" required><br>
+
             <label for="message">Správa:</label><br>
             <textarea id="message" name="message" rows="4" required></textarea><br>
+
             <button type="submit">Odoslať</button>
         </form>
     </section>
 
-
     <footer>
-        &copy; 2025 McPumps - Všetky práva vyhradené
+        &copy; 2023-2026 McPumps - Všetky práva vyhradené
     </footer>
-    <!-- Chatbase AI widget – vlož sem -->
-    <script>
-    (function(){
-      if(!window.chatbase || window.chatbase("getState") !== "initialized"){
-        window.chatbase = (...arguments) => {
-          if (!window.chatbase.q) {
-            window.chatbase.q = []
-          }
-          window.chatbase.q.push(arguments)
-        };
-        window.chatbase = new Proxy(window.chatbase, {
-          get(target, prop) {
-            if (prop === "q") {
-              return target.q
-            }
-            return (...args) => target(prop, ...args)
-          }
-        })
-      }
-      const onLoad = function () {
-        const script = document.createElement("script");
-        script.src = "https://www.chatbase.co/embed.min.js";
-        script.id = "XDWhVufdW4ONlsaJRtM0T";
-        script.domain = "www.chatbase.co";
-        document.body.appendChild(script)
-      };
-      if (document.readyState === "complete") {
-        onLoad()
-      } else {
-        window.addEventListener("load", onLoad)
-      }
-    })();
-    </script>
-
 </body>
 </html>
