@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="KEENON Robotics cez McPumps - robotické riešenia pre prevádzky, hotely, reštaurácie a služby.">
-  <title>KEENON Robotics | McPumps</title>
+  <meta name="description" content="KEENON Robotics cez McPumps - čistiace roboty KLEENBOT C20, C30, C40 a C55 pre hotely, retail, administratívu, nemocnice a veľké prevádzky.">
+  <title>KEENON Robotics | Čistiace roboty | McPumps</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <style>
     :root {
@@ -31,6 +31,8 @@
     .logo { height: 48px; width: auto; }
     .brand strong { display: block; font-size: 18px; letter-spacing: 0; }
     .brand span { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .nav-links { display: flex; align-items: center; gap: 18px; color: #30445b; font-size: 15px; }
+    .nav-links a { text-decoration: none; white-space: nowrap; }
     .nav-actions { display: flex; align-items: center; gap: 10px; }
 
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 11px 18px; border-radius: 8px; border: 1px solid transparent; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
@@ -39,13 +41,15 @@
     .button-secondary { background: rgba(255, 255, 255, 0.92); color: var(--navy); border-color: rgba(255, 255, 255, 0.45); }
     .button-quiet { background: #edf6f9; color: var(--navy); border-color: var(--line); }
 
-    .hero { min-height: 620px; display: grid; align-items: center; color: var(--white); background: linear-gradient(90deg, rgba(4, 31, 55, 0.94) 0%, rgba(5, 52, 85, 0.82) 55%, rgba(5, 52, 85, 0.34) 100%), url('images/water-background.jpg') center/cover no-repeat; }
+    .hero { min-height: 690px; display: grid; align-items: center; color: var(--white); background: linear-gradient(90deg, rgba(4, 31, 55, 0.94) 0%, rgba(5, 52, 85, 0.82) 52%, rgba(5, 52, 85, 0.2) 100%), url('https://static.keenon.com/uploads/2025/05/30/92729460cc9146038e0f12b8e0efe0fb.jpg?x-oss-process=image%2Fformat%2Cwebp') center/cover no-repeat; }
     .hero-inner { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 76px 0 90px; }
     .eyebrow { margin: 0 0 14px; color: #93e6ed; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; }
     h1, h2, h3, p { margin-top: 0; }
     h1 { max-width: 760px; margin-bottom: 22px; font-size: clamp(42px, 7vw, 74px); line-height: 0.98; letter-spacing: 0; }
     .hero-copy { max-width: 680px; margin-bottom: 30px; color: #d7ebf2; font-size: 19px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 34px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; max-width: 760px; }
+    .hero-pills span { padding: 8px 12px; border-radius: 999px; color: #d7ebf2; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); font-weight: 700; font-size: 14px; }
 
     .section { padding: 84px 24px; }
     .section.alt { background: var(--mist); }
@@ -54,34 +58,65 @@
     .section-heading.center { margin-left: auto; margin-right: auto; text-align: center; }
     h2 { margin-bottom: 14px; font-size: clamp(30px, 4vw, 46px); line-height: 1.1; letter-spacing: 0; }
     .section-heading p, .lead { color: var(--muted); font-size: 18px; }
-    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
     .surface { background: var(--white); border: 1px solid var(--line); border-radius: 8px; box-shadow: var(--shadow); }
-    .card { padding: 28px; min-height: 210px; border-top: 3px solid var(--aqua); }
-    .card h3 { margin-bottom: 10px; font-size: 22px; }
-    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .model-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .model-card { overflow: hidden; display: grid; grid-template-rows: 310px 1fr; }
+    .model-card img { width: 100%; height: 310px; object-fit: cover; background: #eef5f8; }
+    .model-content { padding: 28px; display: grid; gap: 16px; }
+    .model-kicker { color: var(--blue); font-size: 13px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+    .model-card h3 { margin-bottom: 0; font-size: 28px; line-height: 1.15; }
+    .model-card p { color: var(--muted); margin-bottom: 0; }
+    .specs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .spec { padding: 12px; border-radius: 8px; background: #f3f8fb; border: 1px solid #e2edf3; }
+    .spec strong { display: block; color: var(--ink); font-size: 15px; }
+    .spec span { display: block; color: var(--muted); font-size: 13px; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { padding: 6px 10px; border-radius: 999px; background: #eef7fa; color: var(--navy); font-size: 13px; font-weight: 700; }
+
+    .use-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+    .use-card { padding: 24px; min-height: 170px; border-top: 3px solid var(--aqua); }
+    .use-card h3 { margin-bottom: 10px; font-size: 20px; }
+    .use-card p { color: var(--muted); margin-bottom: 0; }
+
+    .benefit-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 26px; align-items: stretch; }
+    .benefit-panel { padding: 34px; background: linear-gradient(160deg, var(--navy), #0b6b8f); color: var(--white); border-radius: 8px; }
+    .benefit-panel p { color: #d5edf3; }
+    .benefit-list { padding: 34px; display: grid; gap: 14px; }
+    .benefit-list p { margin: 0; color: var(--muted); }
+    .benefit-list strong { color: var(--ink); }
+
     .contact-panel { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 26px; align-items: stretch; }
     .contact-info { padding: 34px; background: linear-gradient(160deg, var(--navy), #0b6b8f); color: var(--white); border-radius: 8px; }
     .contact-info p { color: #d5edf3; }
     .contact-line { display: block; margin: 18px 0; font-size: 19px; font-weight: 800; text-decoration: none; }
-    .note { padding: 34px; }
-    .note p { color: var(--muted); }
+    form { padding: 34px; }
+    label { display: block; margin-bottom: 7px; color: #31475d; font-weight: 700; text-align: left; }
+    input, textarea, select { width: 100%; margin-bottom: 18px; padding: 13px 14px; border: 1px solid #c9dbe5; border-radius: 8px; font: inherit; color: var(--ink); background: #fbfdfe; }
+    textarea { resize: vertical; min-height: 130px; }
+
     .site-footer { padding: 28px 24px; background: #08253d; color: #c8dbe4; }
     .footer-inner { width: min(1180px, 100%); margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; }
 
-    @media (max-width: 900px) {
-      .grid, .contact-panel { grid-template-columns: 1fr; }
+    @media (max-width: 980px) {
+      .nav { align-items: flex-start; }
+      .nav-links { display: none; }
+      .model-grid, .use-grid, .benefit-layout, .contact-panel { grid-template-columns: 1fr; }
       .hero { min-height: auto; }
     }
 
     @media (max-width: 640px) {
       .nav { padding: 12px 18px; flex-wrap: wrap; }
       .brand { width: 100%; }
-      .nav-actions { width: 100%; justify-content: space-between; }
+      .nav-actions { width: 100%; justify-content: space-between; flex-wrap: wrap; }
       .hero-inner { width: min(100% - 36px, 1180px); padding: 58px 0 70px; }
       .section { padding: 62px 18px; }
       h1 { font-size: 42px; }
       .hero-copy, .section-heading p, .lead { font-size: 17px; }
-      .card, .contact-info, .note { padding: 24px; }
+      .model-card { grid-template-rows: 240px 1fr; }
+      .model-card img { height: 240px; }
+      .specs { grid-template-columns: 1fr; }
+      .model-content, .use-card, .benefit-panel, .benefit-list, .contact-info, form { padding: 24px; }
     }
   </style>
 </head>
@@ -90,11 +125,17 @@
     <nav class="nav" aria-label="Hlavná navigácia">
       <a class="brand" href="index.html" aria-label="McPumps domov">
         <img src="McPumps_Logo.jpg" alt="McPumps Logo" class="logo">
-        <span><strong>McPumps</strong><span>Vodné hospodárstvo</span></span>
+        <span><strong>McPumps</strong><span>KEENON Robotics</span></span>
       </a>
+      <div class="nav-links">
+        <a href="#models">Modely</a>
+        <a href="#use">Použitie</a>
+        <a href="#benefits">Výhody</a>
+        <a href="#contact">Dopyt</a>
+      </div>
       <div class="nav-actions">
         <a class="button button-quiet" href="index.html">Späť na McPumps</a>
-        <a class="button button-primary" href="mailto:keenon@mcpumps.sk">Kontaktovať</a>
+        <a class="button button-primary" href="#contact">Vyžiadať ponuku</a>
       </div>
     </nav>
   </header>
@@ -103,45 +144,153 @@
     <section class="hero">
       <div class="hero-inner">
         <p class="eyebrow">KEENON Robotics cez McPumps</p>
-        <h1>Robotické riešenia pre modernejšiu prevádzku</h1>
-        <p class="hero-copy">Pripravujeme ponuku servisných a doručovacích robotov KEENON pre hotely, reštaurácie, zdravotníctvo, administratívne priestory a ďalšie prevádzky, kde automatizácia pomáha zvyšovať komfort aj efektivitu.</p>
+        <h1>Autonómne čistiace roboty pre moderné prevádzky</h1>
+        <p class="hero-copy">Predstavujeme sériu KLEENBOT pre komerčné priestory: od kompaktného čistenia menších plôch až po výkonné riešenia pre obchodné centrá, hotely, nemocnice, sklady a veľké administratívne budovy.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="mailto:keenon@mcpumps.sk">Mám záujem o riešenie</a>
-          <a class="button button-secondary" href="index.html#contact">Kontakt na McPumps</a>
+          <a class="button button-primary" href="#contact">Požiadať o cenovú ponuku</a>
+          <a class="button button-secondary" href="#models">Pozrieť modely</a>
+        </div>
+        <div class="hero-pills">
+          <span>automatické čistenie</span>
+          <span>aplikácia a reporting</span>
+          <span>retail, hotely, nemocnice</span>
+          <span>cena na vyžiadanie</span>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section id="models" class="section">
       <div class="container">
         <div class="section-heading center">
-          <p class="eyebrow">Pre koho je riešenie vhodné</p>
-          <h2>Automatizácia tam, kde opakované úlohy berú ľuďom čas</h2>
-          <p>Stránku priebežne pripravujeme, ale už teraz nás môžete kontaktovať, ak zvažujete robotické riešenie pre svoju prevádzku.</p>
+          <p class="eyebrow">Čistiace roboty KLEENBOT</p>
+          <h2>Vyberte model podľa veľkosti priestoru a typu čistenia</h2>
+          <p>Cenník používame ako interný podklad. Na webe odporúčame riešiť cenu individuálne podľa modelu, konfigurácie, príslušenstva a servisného rozsahu.</p>
         </div>
-        <div class="grid">
-          <article class="card surface"><h3>Gastro a hotely</h3><p>Podpora obsluhy, doručovanie jedál a nápojov, odľahčenie personálu počas špičky.</p></article>
-          <article class="card surface"><h3>Zdravotníctvo a služby</h3><p>Transport materiálu, navigované doručovanie a zníženie rutinných presunov v prevádzke.</p></article>
-          <article class="card surface"><h3>Administratíva a retail</h3><p>Reprezentatívne technologické riešenia pre priestory s pravidelným pohybom ľudí.</p></article>
+        <div class="model-grid">
+          <article class="model-card surface">
+            <img src="https://static.keenon.com/uploads/2025/05/30/92729460cc9146038e0f12b8e0efe0fb.jpg?x-oss-process=image%2Fformat%2Cwebp" alt="KLEENBOT C20 kompaktný čistiaci robot" loading="lazy">
+            <div class="model-content">
+              <div><span class="model-kicker">KLEENBOT C20</span><h3>Kompaktné čistenie menších priestorov</h3></div>
+              <p>Vhodný pre menšie komerčné priestory, kancelárie, showroomy, recepcie a prevádzky, kde je dôležitá obratnosť a jednoduchá obsluha.</p>
+              <div class="specs">
+                <div class="spec"><strong>do 400 m²/h</strong><span>čistiaca efektivita</span></div>
+                <div class="spec"><strong>7 l / 5 l</strong><span>čistá a špinavá voda</span></div>
+                <div class="spec"><strong>450 mm</strong><span>šírka zametania/vysávania</span></div>
+                <div class="spec"><strong>4 h</strong><span>čas nabíjania</span></div>
+              </div>
+              <div class="tag-list"><span class="tag">menšie plochy</span><span class="tag">kompaktný dizajn</span><span class="tag">mokré čistenie</span></div>
+            </div>
+          </article>
+
+          <article class="model-card surface">
+            <img src="https://static.keenon.com/uploads/2025/01/07/de67edd2fbee407aaadd617ded3e9fdf.jpg?x-oss-process=image%2Fformat%2Cwebp" alt="KLEENBOT C30 čistiaci robot" loading="lazy">
+            <div class="model-content">
+              <div><span class="model-kicker">KLEENBOT C30</span><h3>Suché čistenie 3 v 1 pre komerčné priestory</h3></div>
+              <p>Model C30 kombinuje zametanie, vysávanie a mopovanie prachu. Je vhodný tam, kde treba pravidelné suché čistenie väčších interiérov.</p>
+              <div class="specs">
+                <div class="spec"><strong>600 m²/h</strong><span>čistiaca efektivita</span></div>
+                <div class="spec"><strong>61 cm</strong><span>maximálna šírka čistenia</span></div>
+                <div class="spec"><strong>až 10 h</strong><span>výdrž pri mopovaní prachu</span></div>
+                <div class="spec"><strong>19 000 Pa</strong><span>maximálny sací výkon</span></div>
+              </div>
+              <div class="tag-list"><span class="tag">suché čistenie</span><span class="tag">aplikácia</span><span class="tag">dlhá výdrž</span></div>
+            </div>
+          </article>
+
+          <article class="model-card surface">
+            <img src="https://static.keenon.com/uploads/2025/10/23/6d9c3aecae374928bd63182f0bfa0cc6.jpg?x-oss-process=image%2Fformat%2Cwebp" alt="KLEENBOT C40 čistiaci robot 4 v 1" loading="lazy">
+            <div class="model-content">
+              <div><span class="model-kicker">KLEENBOT C40</span><h3>Profesionálne čistenie 4 v 1 pre malé a stredné priestory</h3></div>
+              <p>C40 je riešenie pre priestory, kde sa kombinuje prach, bežné nečistoty a mokré znečistenie. V jednom prejazde pomáha riešiť zametanie, vysávanie aj umývanie podlahy.</p>
+              <div class="specs">
+                <div class="spec"><strong>do 1 100 m²/h</strong><span>čistiaca efektivita</span></div>
+                <div class="spec"><strong>16 l / 14 l</strong><span>čistá a špinavá voda</span></div>
+                <div class="spec"><strong>až 12 h</strong><span>výdrž pri zametaní</span></div>
+                <div class="spec"><strong>2 h</strong><span>nabíjanie / výmena batérie</span></div>
+              </div>
+              <div class="tag-list"><span class="tag">4 v 1</span><span class="tag">retail</span><span class="tag">hotely</span><span class="tag">nemocnice</span></div>
+            </div>
+          </article>
+
+          <article class="model-card surface">
+            <img src="https://static.keenon.com/uploads/2025/11/06/422a0edc9e1045c5912471a09c70e343.jpg?x-oss-process=image%2Fformat%2Cwebp" alt="KLEENBOT C55 profesionálny čistiaci robot" loading="lazy">
+            <div class="model-content">
+              <div><span class="model-kicker">KLEENBOT C55</span><h3>Výkonné riešenie pre stredné a veľké plochy</h3></div>
+              <p>C55 je určený pre rozsiahle interiéry a náročnejšiu prevádzku. Kombinuje drhnutie, vysávanie a stieranie, podporuje výmenu batérií a automatizované riadenie čistenia.</p>
+              <div class="specs">
+                <div class="spec"><strong>2 376 m²/h</strong><span>teoretická efektivita</span></div>
+                <div class="spec"><strong>60 l / 47 l</strong><span>čistá a špinavá voda</span></div>
+                <div class="spec"><strong>550 mm</strong><span>šírka drhnutia</span></div>
+                <div class="spec"><strong>až 5 h</strong><span>výdrž s výmenou batérií</span></div>
+              </div>
+              <div class="tag-list"><span class="tag">veľké plochy</span><span class="tag">scrub & vacuum</span><span class="tag">IoT reporting</span></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section alt">
+    <section id="use" class="section alt">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="eyebrow">Typické použitie</p>
+          <h2>Robotické čistenie dáva najväčší zmysel tam, kde sa úlohy pravidelne opakujú</h2>
+          <p>Pomôžeme vybrať model podľa typu podlahy, veľkosti priestoru, frekvencie čistenia a spôsobu obsluhy.</p>
+        </div>
+        <div class="use-grid">
+          <article class="use-card surface"><h3>Retail a nákupné centrá</h3><p>Pravidelné udržiavanie čistoty v priestoroch s vysokým pohybom zákazníkov.</p></article>
+          <article class="use-card surface"><h3>Hotely a administratíva</h3><p>Čistenie chodieb, lobby, konferenčných priestorov a spoločných zón.</p></article>
+          <article class="use-card surface"><h3>Nemocnice a služby</h3><p>Stabilný režim čistenia s dôrazom na bezpečný pohyb v prevádzke.</p></article>
+          <article class="use-card surface"><h3>Sklady a veľké haly</h3><p>Efektívne čistenie rozsiahlych plôch s možnosťou plánovania úloh.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="section">
+      <div class="container benefit-layout">
+        <div class="benefit-panel">
+          <p class="eyebrow">Prečo automatizovať čistenie</p>
+          <h2>Menej rutiny, lepší prehľad a stabilnejší výsledok</h2>
+          <p>Čistiace roboty nenahrádzajú celý upratovací tím. V praxi pomáhajú prevziať opakované trasy a pravidelné úlohy, aby sa personál mohol venovať detailom, hygiene a kontrole kvality.</p>
+          <a class="button button-secondary" href="#contact">Preveriť vhodnosť riešenia</a>
+        </div>
+        <div class="benefit-list surface">
+          <p><strong>Plánované trasy:</strong> robot dokáže pracovať podľa mapy priestoru a opakovaného harmonogramu.</p>
+          <p><strong>Monitoring a reporting:</strong> vybrané modely podporujú sledovanie úloh, stavu a výsledkov cez aplikáciu alebo web.</p>
+          <p><strong>Bezpečný pohyb:</strong> senzory, kamery a LiDAR pomáhajú robotu vnímať okolie a vyhýbať sa prekážkam.</p>
+          <p><strong>Flexibilita modelov:</strong> od kompaktného C20 po výkonný C55 pre veľké plochy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
       <div class="container contact-panel">
         <div class="contact-info">
-          <p class="eyebrow">Kontakt</p>
-          <h2>Chcete preveriť vhodnosť robotického riešenia?</h2>
-          <p>Napíšte nám typ prevádzky a predstavu, čo by mal robot pomôcť riešiť. Ozveme sa vám s ďalším postupom.</p>
+          <p class="eyebrow">Dopyt</p>
+          <h2>Chcete vybrať vhodný KEENON model?</h2>
+          <p>Napíšte nám typ prevádzky, približnú plochu a typ podlahy. Pripravíme odporúčanie a cenovú ponuku podľa aktuálneho cenníka a dostupnej konfigurácie.</p>
           <a class="contact-line" href="mailto:keenon@mcpumps.sk">keenon@mcpumps.sk</a>
           <a class="contact-line" href="tel:+421905693348">+421 905 693 348</a>
         </div>
-        <div class="note surface">
-          <p class="eyebrow">Stav stránky</p>
-          <h2>Obsah doplníme priebežne</h2>
-          <p>Táto podstránka je pripravená ako moderný vstupný bod pre záujemcov o KEENON Robotics. Detailné produktové informácie, modely a prípadové použitia je možné doplniť po potvrdení finálnej ponuky.</p>
-          <a class="button button-primary" href="mailto:keenon@mcpumps.sk">Požiadať o informácie</a>
-        </div>
+        <form class="surface" action="https://formspree.io/f/mzzebnlg" method="POST">
+          <label for="name">Meno</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <label for="phone">Telefón</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9 +]{9,15}" required>
+          <label for="model">Zaujíma ma model</label>
+          <select id="model" name="model">
+            <option>Potrebujem odporúčanie</option>
+            <option>KLEENBOT C20</option>
+            <option>KLEENBOT C30</option>
+            <option>KLEENBOT C40</option>
+            <option>KLEENBOT C55</option>
+          </select>
+          <label for="message">Správa</label>
+          <textarea id="message" name="message" required placeholder="Uveďte približnú plochu, typ prevádzky, typ podlahy a očakávaný režim čistenia."></textarea>
+          <button class="button button-primary" type="submit">Odoslať dopyt</button>
+        </form>
       </div>
     </section>
   </main>
@@ -149,7 +298,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <span>&copy; 2023-2026 McPumps. Všetky práva vyhradené.</span>
-      <span>KEENON Robotics | McPumps</span>
+      <span>KEENON Robotics | Čistiace roboty</span>
     </div>
   </footer>
 </body>
