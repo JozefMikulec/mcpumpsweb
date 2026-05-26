@@ -38,3 +38,5 @@ jobs:
             git commit -m "Oprava priemyselnych fotografii"
             git push
           fi
+
+# Trigger refresh after workflow registration.
