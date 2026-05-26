@@ -1,0 +1,40 @@
+name: Refresh industrial photos
+
+on:
+  push:
+    paths:
+      - .github/workflows/refresh-industrial-images.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Download clean image files
+        run: |
+          set -euo pipefail
+          mkdir -p images
+          curl -L --fail --retry 3 --output images/industrial-bochum.jpg "https://images.pexels.com/photos/12634302/pexels-photo-12634302.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          curl -L --fail --retry 3 --output images/wastewater-kielce.jpg "https://cdn.pixabay.com/photo/2017/10/07/16/27/treatment-plant-wastewater-2826988_1280.jpg"
+          file images/industrial-bochum.jpg images/wastewater-kielce.jpg
+
+      - name: Commit refreshed images
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/industrial-bochum.jpg images/wastewater-kielce.jpg
+          if git diff --cached --quiet; then
+            echo "No image changes to commit."
+          else
+            git commit -m "Oprava priemyselnych fotografii"
+            git push
+          fi
