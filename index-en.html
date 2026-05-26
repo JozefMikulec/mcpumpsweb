@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="McPumps supplies pumping technology and water management solutions for municipalities, households and technical operations.">
+  <meta name="description" content="McPumps supplies pumping technology and water management solutions for municipalities, industry, households and technical operations.">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-B567QM2NZN"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -79,7 +79,7 @@
     .photo-stack img { width: 100%; height: 390px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow); }
     .photo-stack img:last-child { height: 290px; }
 
-    .solutions-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .solutions-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
     .solution-card { overflow: hidden; display: grid; grid-template-rows: 260px 1fr; }
     .solution-card img { width: 100%; height: 260px; object-fit: cover; }
     .solution-card-content { padding: 28px; }
@@ -107,11 +107,15 @@
     .site-footer { padding: 28px 24px; background: #08253d; color: #c8dbe4; }
     .footer-inner { width: min(1180px, 100%); margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; }
 
+    @media (max-width: 1020px) {
+      .solutions-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 920px) {
       .nav { align-items: flex-start; }
       .nav-links { display: none; }
       .hero { min-height: auto; }
-      .hero-metrics, .split, .solutions-grid, .process-grid, .contact-layout { grid-template-columns: 1fr; }
+      .hero-metrics, .split, .process-grid, .contact-layout { grid-template-columns: 1fr; }
       .metric { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
       .metric:last-child { border-bottom: 0; }
       .photo-stack { grid-template-columns: 1fr; }
@@ -158,14 +162,14 @@
       <div class="hero-inner">
         <p class="eyebrow">Pumping technology and smart solutions</p>
         <h1 id="hero-title">Reliable water management solutions</h1>
-        <p class="hero-copy">We help municipalities, water utilities, technical operators and households choose and supply pumping solutions that make sense technically and economically.</p>
+        <p class="hero-copy">We help municipalities, water utilities, industrial operations and households choose and supply pumping solutions that make sense technically and economically.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#contact">Request a consultation</a>
           <a class="button button-secondary" href="#solutions">Explore solutions</a>
         </div>
         <div class="hero-metrics" aria-label="McPumps experience">
           <div class="metric"><strong>18+</strong><span>years of industry experience</span></div>
-          <div class="metric"><strong>2</strong><span>core segments: municipal and residential</span></div>
+          <div class="metric"><strong>3</strong><span>core segments: municipal, industry and residential</span></div>
           <div class="metric"><strong>SK/CZ</strong><span>cooperation with proven partners</span></div>
         </div>
       </div>
@@ -180,7 +184,7 @@
           <p>Our experience covers drinking water supply, wastewater transport and treatment, pump monitoring, predictive maintenance and optimisation of operating costs.</p>
           <ul class="check-list">
             <li>We recommend solutions based on real operating conditions, not a generic catalogue answer.</li>
-            <li>We combine municipal water management know-how with practical solutions for households and smaller facilities.</li>
+            <li>We combine municipal and industrial water management know-how with practical solutions for households and smaller facilities.</li>
             <li>We support customers in technology selection, delivery and further system development.</li>
           </ul>
         </div>
@@ -195,7 +199,7 @@
       <div class="container">
         <div class="section-heading center">
           <p class="eyebrow">Our solutions</p>
-          <h2>From municipal technologies to efficient household water use</h2>
+          <h2>From municipal and industrial technologies to efficient household water use</h2>
           <p>We select and combine pumping technology to be reliable, serviceable and appropriate for the purpose of the project.</p>
         </div>
         <div class="solutions-grid">
@@ -205,6 +209,14 @@
               <h3>Municipal water management</h3>
               <p>We supply pumping technology and related solutions for municipal water companies, infrastructure operators and demanding technical applications.</p>
               <div class="tags"><span class="tag">drinking water</span><span class="tag">wastewater</span><span class="tag">monitoring</span></div>
+            </div>
+          </article>
+          <article class="solution-card surface">
+            <img src="images/water-background.jpg" alt="Industrial pumping and water management technology">
+            <div class="solution-card-content">
+              <h3>Industry and technical operations</h3>
+              <p>We support the selection and supply of pumping technology for industrial applications, process units, operational water management and optimisation of existing equipment.</p>
+              <div class="tags"><span class="tag">industry</span><span class="tag">technology</span><span class="tag">optimisation</span></div>
             </div>
           </article>
           <article class="solution-card surface">
