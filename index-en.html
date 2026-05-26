@@ -78,6 +78,7 @@
     .photo-stack { display: grid; grid-template-columns: 1fr 0.82fr; gap: 16px; align-items: end; }
     .photo-stack img { width: 100%; height: 390px; object-fit: cover; border-radius: 8px; box-shadow: var(--shadow); }
     .photo-stack img:last-child { height: 290px; }
+    .photo-stack .wide { grid-column: 1 / -1; height: 260px; }
 
     .solutions-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
     .solution-card { overflow: hidden; display: grid; grid-template-rows: 260px 1fr; }
@@ -119,7 +120,7 @@
       .metric { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
       .metric:last-child { border-bottom: 0; }
       .photo-stack { grid-template-columns: 1fr; }
-      .photo-stack img, .photo-stack img:last-child { height: 280px; }
+      .photo-stack img, .photo-stack img:last-child, .photo-stack .wide { height: 280px; }
     }
 
     @media (max-width: 640px) {
@@ -191,6 +192,7 @@
         <div class="photo-stack" aria-label="Solution photos">
           <img src="images/komunalne.jpg" alt="Technical solution for municipal water management">
           <img src="images/domace.jpg" alt="Pumping solution for household and garden use">
+          <img class="wide" src="https://cdn.pixabay.com/photo/2017/10/07/16/27/treatment-plant-wastewater-2826988_1280.jpg" alt="Aerial view of a wastewater treatment plant in Kielce, Poland">
         </div>
       </div>
     </section>
@@ -212,7 +214,7 @@
             </div>
           </article>
           <article class="solution-card surface">
-            <img src="images/water-background.jpg" alt="Industrial pumping and water management technology">
+            <img src="https://images.pexels.com/photos/12634302/pexels-photo-12634302.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Industrial water management technology in Bochum, Germany">
             <div class="solution-card-content">
               <h3>Industry and technical operations</h3>
               <p>We support the selection and supply of pumping technology for industrial applications, process units, operational water management and optimisation of existing equipment.</p>
