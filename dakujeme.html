@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ďakujeme za odoslanie správy spoločnosti McPumps. Ozveme sa vám čo najskôr.">
+  <title>Ďakujeme | McPumps</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    :root { --ink: #102033; --muted: #5f6f82; --navy: #073b66; --blue: #006fae; --aqua: #00a7b5; --mist: #eef7fa; --line: #d9e7ee; --white: #ffffff; --shadow: 0 18px 45px rgba(8, 35, 56, 0.12); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); background: #f7fbfd; line-height: 1.6; }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255, 255, 255, 0.94); border-bottom: 1px solid rgba(217, 231, 238, 0.9); backdrop-filter: blur(14px); }
+    .nav { max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; min-width: 190px; }
+    .logo { height: 48px; width: auto; }
+    .brand strong { display: block; font-size: 18px; letter-spacing: 0; }
+    .brand span { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .nav-links { display: flex; align-items: center; justify-content: center; gap: 18px; color: #30445b; font-size: 15px; }
+    .nav-links a { text-decoration: none; white-space: nowrap; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .flag-link img { width: 30px; height: auto; border-radius: 3px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 11px 18px; border-radius: 8px; border: 1px solid transparent; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease; }
+    .button:hover { transform: translateY(-1px); }
+    .button-primary { background: var(--blue); color: var(--white); box-shadow: 0 10px 24px rgba(0, 111, 174, 0.25); }
+    .button-secondary { background: rgba(255, 255, 255, 0.92); color: var(--navy); border-color: rgba(255, 255, 255, 0.45); }
+    .button-quiet { background: #edf6f9; color: var(--navy); border-color: var(--line); }
+    .thanks-hero { min-height: calc(100vh - 101px); display: grid; align-items: center; position: relative; overflow: hidden; color: var(--white); background: linear-gradient(90deg, rgba(4, 31, 55, 0.94) 0%, rgba(5, 52, 85, 0.82) 50%, rgba(5, 52, 85, 0.35) 100%), url('images/water-background.jpg') center/cover no-repeat; }
+    .thanks-inner { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 82px 0 96px; }
+    .thanks-panel { max-width: 760px; }
+    .eyebrow { margin: 0 0 14px; color: #93e6ed; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; }
+    h1, h2, p { margin-top: 0; }
+    h1 { margin-bottom: 22px; font-size: clamp(42px, 7vw, 76px); line-height: 0.98; letter-spacing: 0; }
+    .thanks-copy { max-width: 640px; margin-bottom: 30px; color: #d7ebf2; font-size: 19px; }
+    .thanks-card { max-width: 620px; margin-top: 34px; padding: 28px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 8px; backdrop-filter: blur(12px); }
+    .thanks-card h2 { margin-bottom: 10px; font-size: 24px; line-height: 1.2; }
+    .thanks-card p { margin-bottom: 0; color: #d7ebf2; }
+    .thanks-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .site-footer { padding: 28px 24px; background: #08253d; color: #c8dbe4; }
+    .footer-inner { width: min(1180px, 100%); margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; }
+    @media (max-width: 920px) { .nav { align-items: flex-start; } .nav-links { display: none; } .thanks-hero { min-height: auto; } }
+    @media (max-width: 640px) { .nav { padding: 12px 18px; flex-wrap: wrap; } .brand { width: 100%; } .nav-actions { width: 100%; justify-content: space-between; } .thanks-inner { width: min(100% - 36px, 1180px); padding: 66px 0 78px; } h1 { font-size: 42px; } .thanks-copy { font-size: 17px; } .thanks-card { padding: 24px; } .thanks-actions { display: grid; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Hlavná navigácia">
+      <a class="brand" href="index.html#top" aria-label="McPumps domov">
+        <img src="McPumps_Logo.jpg" alt="McPumps Logo" class="logo">
+        <span><strong>McPumps</strong><span>Vodné hospodárstvo</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about">O nás</a><a href="index.html#solutions">Riešenia</a><a href="index.html#process">Spolupráca</a><a href="index.html#partners">Partneri</a><a href="index.html#contact">Kontakt</a>
+      </div>
+      <div class="nav-actions">
+        <a class="button button-quiet" href="keenon.html">KEENON Robotics</a>
+        <a class="flag-link" href="index-en.html" aria-label="Anglická verzia"><img src="images/uk-flag.png" alt="Anglická verzia"></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="thanks-hero" aria-labelledby="thanks-title">
+      <div class="thanks-inner">
+        <div class="thanks-panel">
+          <p class="eyebrow">Správa bola odoslaná</p>
+          <h1 id="thanks-title">Ďakujeme za vašu správu</h1>
+          <p class="thanks-copy">Vašu požiadavku sme prijali. Prejdeme si ju a ozveme sa vám s ďalším praktickým krokom čo najskôr.</p>
+          <div class="thanks-actions">
+            <a class="button button-primary" href="index.html">Späť na úvod</a>
+            <a class="button button-secondary" href="index.html#solutions">Pozrieť riešenia</a>
+          </div>
+          <div class="thanks-card">
+            <h2>Potrebujete doplniť informácie?</h2>
+            <p>Napíšte nám priamo na <a href="mailto:office@mcpumps.sk">office@mcpumps.sk</a> alebo zavolajte na <a href="tel:+421905693348">+421 905 693 348</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><span>&copy; 2023-2026 McPumps. Všetky práva vyhradené.</span><span>Profesionálne riešenia pre vodné hospodárstvo.</span></div></footer>
+</body>
+</html>
