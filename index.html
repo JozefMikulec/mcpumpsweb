@@ -80,6 +80,8 @@
     label { display: block; margin-bottom: 7px; color: #31475d; font-weight: 700; text-align: left; }
     input, textarea { width: 100%; margin-bottom: 18px; padding: 13px 14px; border: 1px solid #c9dbe5; border-radius: 8px; font: inherit; color: var(--ink); background: #fbfdfe; }
     textarea { resize: vertical; min-height: 130px; }
+    button:disabled { opacity: 0.72; cursor: wait; transform: none; }
+    #form-status { margin: 16px 0 0; color: #9b1c1c; font-weight: 700; }
     .site-footer { padding: 28px 24px; background: #08253d; color: #c8dbe4; }
     .footer-inner { width: min(1180px, 100%); margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; }
     @media (max-width: 1020px) { .solutions-grid { grid-template-columns: 1fr; } }
@@ -153,9 +155,45 @@
 
     <section id="process" class="section"><div class="container"><div class="section-heading"><p class="eyebrow">Ako pracujeme</p><h2>Rýchlo sa zorientujeme v zadaní a navrhneme rozumný ďalší krok</h2></div><div class="process-grid"><article class="process-step surface"><span>01</span><h3>Konzultácia</h3><p>Prejdeme potrebu, prevádzkové podmienky a očakávaný výsledok.</p></article><article class="process-step surface"><span>02</span><h3>Návrh riešenia</h3><p>Vyberieme vhodnú technológiu a odporučíme technicky čisté riešenie.</p></article><article class="process-step surface"><span>03</span><h3>Dodávka</h3><p>Zabezpečíme čerpaciu techniku a súvisiace komponenty podľa dohody.</p></article><article class="process-step surface"><span>04</span><h3>Optimalizácia</h3><p>Pri existujúcich zariadeniach hľadáme možnosti úspor, monitoringu a údržby.</p></article></div></div></section>
     <section id="partners" class="section alt"><div class="container"><div class="section-heading center"><p class="eyebrow">Partneri</p><h2>Spolupracujeme s overenými výrobcami a technologickými partnermi</h2><p>Vďaka partnerstvám vieme priniesť riešenia, ktoré sú dostupné, technicky spoľahlivé a pripravené na reálnu prevádzku.</p></div><div class="partners-strip surface"><img src="images/partner1.png" alt="Partner 1"><img src="images/partner2.png" alt="Partner 2"></div></div></section>
-    <section id="contact" class="section"><div class="container contact-layout"><div class="contact-info"><p class="eyebrow">Kontakt</p><h2>Poďme nájsť vhodné riešenie</h2><p>Napíšte nám, čo potrebujete vyriešiť. Ozveme sa vám a navrhneme ďalší praktický postup.</p><a class="contact-line" href="mailto:office@mcpumps.sk">office@mcpumps.sk</a><a class="contact-line" href="tel:+421905693348">+421 905 693 348</a></div><form class="surface" action="https://formspree.io/f/mzzebnlg" method="POST"><label for="name">Meno</label><input type="text" id="name" name="name" autocomplete="name" required><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required><label for="phone">Telefón</label><input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9 +]{9,15}" required><label for="message">Správa</label><textarea id="message" name="message" required placeholder="Stručne opíšte, aké riešenie hľadáte."></textarea><button class="button button-primary" type="submit">Odoslať správu</button></form></div></section>
+    <section id="contact" class="section"><div class="container contact-layout"><div class="contact-info"><p class="eyebrow">Kontakt</p><h2>Poďme nájsť vhodné riešenie</h2><p>Napíšte nám, čo potrebujete vyriešiť. Ozveme sa vám a navrhneme ďalší praktický postup.</p><a class="contact-line" href="mailto:office@mcpumps.sk">office@mcpumps.sk</a><a class="contact-line" href="tel:+421905693348">+421 905 693 348</a></div><form id="contact-form" class="surface" action="https://formspree.io/f/mzzebnlg" method="POST"><label for="name">Meno</label><input type="text" id="name" name="name" autocomplete="name" required><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required><label for="phone">Telefón</label><input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9 +]{9,15}" required><label for="message">Správa</label><textarea id="message" name="message" required placeholder="Stručne opíšte, aké riešenie hľadáte."></textarea><button class="button button-primary" type="submit">Odoslať správu</button><p id="form-status" role="status" aria-live="polite"></p></form></div></section>
   </main>
   <footer class="site-footer"><div class="footer-inner"><span>&copy; 2023-2026 McPumps. Všetky práva vyhradené.</span><span>Profesionálne riešenia pre vodné hospodárstvo.</span></div></footer>
+  <script>
+    const contactForm = document.getElementById("contact-form");
+    const formStatus = document.getElementById("form-status");
+
+    if (contactForm) {
+      contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Odosielam...";
+        formStatus.textContent = "";
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: contactForm.method,
+            body: new FormData(contactForm),
+            headers: { "Accept": "application/json" }
+          });
+
+          if (response.ok) {
+            window.location.href = "dakujeme.html";
+            return;
+          }
+
+          formStatus.textContent = "Správu sa nepodarilo odoslať. Skúste to prosím znova alebo nám napíšte na office@mcpumps.sk.";
+        } catch (error) {
+          formStatus.textContent = "Spojenie zlyhalo. Skúste to prosím znova alebo nám napíšte na office@mcpumps.sk.";
+        } finally {
+          submitButton.disabled = false;
+          submitButton.textContent = originalText;
+        }
+      });
+    }
+  </script>
 </body>
 </html>
-
