@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="McPumps dodáva čerpaciu techniku a moderné riešenia pre vodné hospodárstvo, priemysel, domácnosti, obce a technologické prevádzky.">
-  <title>McPumps | Riešenia pre vodné hospodárstvo</title>
+  <meta name="description" content="McPumps Senec dodáva čerpadlá, čerpaciu techniku a riešenia pre vodné hospodárstvo, priemysel, obce, studne, vrty a dažďovú vodu na Slovensku.">
+  <meta name="keywords" content="čerpadlá Senec, čerpacia technika Slovensko, vodné hospodárstvo, čerpadlá pre priemysel, čerpadlá pre obce, studne, vrty, dažďová voda, monitoring čerpadiel">
+  <meta property="og:title" content="McPumps | Čerpadlá Senec a čerpacia technika Slovensko">
+  <meta property="og:description" content="Návrh, dodávka, monitoring a optimalizácia čerpacej techniky pre obce, priemysel a domácnosti.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.mcpumps.sk/">
+  <meta property="og:image" content="https://www.mcpumps.sk/images/water-background.jpg">
+  <title>McPumps | Čerpadlá Senec a čerpacia technika Slovensko</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <style>
     :root { --ink: #102033; --muted: #5f6f82; --navy: #073b66; --blue: #006fae; --aqua: #00a7b5; --mist: #eef7fa; --line: #d9e7ee; --white: #ffffff; --shadow: 0 18px 45px rgba(8, 35, 56, 0.12); }
@@ -35,6 +41,7 @@
     h1 { max-width: 760px; margin-bottom: 22px; font-size: clamp(42px, 7vw, 76px); line-height: 0.98; letter-spacing: 0; }
     .hero-copy { max-width: 650px; margin-bottom: 30px; color: #d7ebf2; font-size: 19px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 42px; }
+    .section-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; justify-content: center; }
     .hero-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 760px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); border-radius: 8px; overflow: hidden; }
     .metric { padding: 20px; border-right: 1px solid rgba(255, 255, 255, 0.18); }
     .metric:last-child { border-right: 0; }
@@ -61,12 +68,18 @@
     .solution-card { overflow: hidden; display: grid; grid-template-rows: 240px 1fr; }
     .solution-card img { width: 100%; height: 240px; object-fit: cover; }
     .solution-card-content { padding: 28px; }
-    .solution-icon, .process-icon { width: 52px; height: 52px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px; border-radius: 8px; color: var(--blue); background: linear-gradient(135deg, rgba(0, 111, 174, 0.12), rgba(0, 167, 181, 0.12)); border: 1px solid rgba(0, 111, 174, 0.14); }
-    .solution-icon svg, .process-icon svg { width: 28px; height: 28px; stroke-width: 1.8; }
+    .solution-icon, .process-icon, .service-icon, .why-icon { width: 52px; height: 52px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px; border-radius: 8px; color: var(--blue); background: linear-gradient(135deg, rgba(0, 111, 174, 0.12), rgba(0, 167, 181, 0.12)); border: 1px solid rgba(0, 111, 174, 0.14); }
+    .solution-icon svg, .process-icon svg, .service-icon svg, .why-icon svg { width: 28px; height: 28px; stroke-width: 1.8; }
     .solution-card h3 { margin-bottom: 12px; font-size: 24px; line-height: 1.2; }
     .solution-card p { color: var(--muted); }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
     .tag { padding: 6px 10px; border-radius: 999px; background: #eef7fa; color: var(--navy); font-size: 13px; font-weight: 700; }
+    .services-grid, .why-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+    .service-card, .why-card { padding: 24px; min-height: 230px; }
+    .service-card h3, .why-card h3 { margin-bottom: 10px; font-size: 20px; line-height: 1.2; }
+    .service-card p, .why-card p { color: var(--muted); margin-bottom: 0; }
+    .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .why-card { min-height: 210px; }
     .process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
     .process-step { padding: 24px; border-left: 3px solid var(--aqua); min-height: 190px; }
     .process-step span { color: var(--blue); font-weight: 800; font-size: 14px; }
@@ -88,11 +101,19 @@
     textarea { resize: vertical; min-height: 130px; }
     button:disabled { opacity: 0.72; cursor: wait; transform: none; }
     #form-status { margin: 16px 0 0; color: #9b1c1c; font-weight: 700; }
-    .site-footer { padding: 28px 24px; background: #08253d; color: #c8dbe4; }
-    .footer-inner { width: min(1180px, 100%); margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; }
-    @media (max-width: 1020px) { .solutions-grid { grid-template-columns: 1fr; } }
+    .site-footer { padding: 48px 24px 28px; background: #08253d; color: #c8dbe4; }
+    .footer-inner { width: min(1180px, 100%); margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; align-items: start; }
+    .footer-brand { color: var(--white); font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .footer-slogan { max-width: 420px; color: #c8dbe4; margin-bottom: 18px; }
+    .footer-title { color: var(--white); font-weight: 800; margin-bottom: 10px; }
+    .footer-links { display: grid; gap: 8px; }
+    .footer-links a, .footer-contact a { color: #c8dbe4; text-decoration: none; }
+    .footer-contact a { display: block; }
+    .footer-contact span { display: block; }
+    .footer-bottom { width: min(1180px, 100%); margin: 28px auto 0; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.14); display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-size: 14px; }
+    @media (max-width: 1020px) { .solutions-grid, .services-grid, .why-grid { grid-template-columns: 1fr; } }
     @media (max-width: 920px) { .nav { align-items: flex-start; } .nav-links { display: none; } .hero { min-height: auto; } .hero-metrics, .split, .process-grid, .contact-layout { grid-template-columns: 1fr; } .metric { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.18); } .metric:last-child { border-bottom: 0; } .photo-stack { grid-template-columns: 1fr; } .photo-stack img, .photo-stack img:last-child, .photo-stack .wide { height: 280px; } }
-    @media (max-width: 640px) { .nav { padding: 12px 18px; flex-wrap: wrap; } .brand { width: 100%; } .nav-actions { width: 100%; justify-content: space-between; } .hero-inner { width: min(100% - 36px, 1180px); padding: 58px 0 70px; } .section { padding: 62px 18px; } h1 { font-size: 42px; } .hero-copy, .section-heading p, .lead { font-size: 17px; } .solution-card { grid-template-rows: 220px 1fr; } .solution-card img { height: 220px; } form, .contact-info, .about-panel { padding: 24px; } }
+    @media (max-width: 640px) { .nav { padding: 12px 18px; flex-wrap: wrap; } .brand { width: 100%; } .nav-actions { width: 100%; justify-content: space-between; } .hero-inner { width: min(100% - 36px, 1180px); padding: 58px 0 70px; } .section { padding: 62px 18px; } h1 { font-size: 42px; } .hero-copy, .section-heading p, .lead { font-size: 17px; } .solution-card { grid-template-rows: 220px 1fr; } .solution-card img { height: 220px; } form, .contact-info, .about-panel { padding: 24px; } .footer-inner { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -103,7 +124,7 @@
         <span><strong>McPumps</strong><span>Vodné hospodárstvo</span></span>
       </a>
       <div class="nav-links">
-        <a href="#about">O nás</a><a href="#solutions">Riešenia</a><a href="#process">Spolupráca</a><a href="#partners">Partneri</a><a href="#contact">Kontakt</a>
+        <a href="#about">O nás</a><a href="#solutions">Riešenia</a><a href="#services">Služby</a><a href="#why">Prečo my</a><a href="#contact">Kontakt</a>
       </div>
       <div class="nav-actions">
         <a class="button button-quiet" href="keenon.html">KEENON Robotics</a>
@@ -156,6 +177,44 @@
           <article class="solution-card surface"><img src="images/industry2.jpg" alt="Priemyselná vodohospodárska technológia"><div class="solution-card-content"><div class="solution-icon" aria-hidden="true"><i data-lucide="factory"></i></div><h3>Priemysel a technologické prevádzky</h3><p>Podporujeme výber a dodávku čerpacej techniky pre priemyselné aplikácie, technologické celky, prevádzkové hospodárstvo s vodou a optimalizáciu existujúcich zariadení.</p><div class="tags"><span class="tag">priemysel</span><span class="tag">technológie</span><span class="tag">optimalizácia</span></div></div></article>
           <article class="solution-card surface"><img src="images/domace1.jpg" alt="Domáce čerpacie riešenia"><div class="solution-card-content"><div class="solution-icon" aria-hidden="true"><i data-lucide="house"></i></div><h3>Domácnosti, studne a dažďová voda</h3><p>Pomáhame s výberom čerpadiel pre zavlažovanie, čerpanie zo studní a vrtov, využitie dažďovej vody a spoľahlivé zásobovanie domácnosti vodou.</p><div class="tags"><span class="tag">studne a vrty</span><span class="tag">závlaha</span><span class="tag">dažďová voda</span></div></div></article>
         </div>
+        <div class="section-actions"><a class="button button-primary" href="#contact">Chcem konzultáciu</a><a class="button button-quiet" href="#services">Pozrieť konkrétne služby</a></div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Konkrétne služby</p>
+          <h2>Čerpacia technika od návrhu až po optimalizáciu prevádzky</h2>
+          <p>Pomáhame s výberom čerpadiel, návrhom riešenia, dodávkou technológie, monitoringom aj zlepšením existujúcej prevádzky.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card surface"><div class="service-icon" aria-hidden="true"><i data-lucide="drafting-compass"></i></div><h3>Návrh čerpacej techniky</h3><p>Posúdime prevádzkové podmienky a navrhneme technicky primerané riešenie.</p></article>
+          <article class="service-card surface"><div class="service-icon" aria-hidden="true"><i data-lucide="package-check"></i></div><h3>Dodávka čerpadiel</h3><p>Zabezpečíme čerpadlá a súvisiace komponenty pre obce, priemysel aj domácnosti.</p></article>
+          <article class="service-card surface"><div class="service-icon" aria-hidden="true"><i data-lucide="monitor"></i></div><h3>Monitoring čerpadiel</h3><p>Podporujeme riešenia pre sledovanie stavu, prevádzky a spoľahlivosti zariadení.</p></article>
+          <article class="service-card surface"><div class="service-icon" aria-hidden="true"><i data-lucide="trending-up"></i></div><h3>Optimalizácia prevádzky</h3><p>Hľadáme možnosti úspor, vhodnejšieho nastavenia a dlhodobej servisovateľnosti.</p></article>
+          <article class="service-card surface"><div class="service-icon" aria-hidden="true"><i data-lucide="cloud-rain"></i></div><h3>Studne a dažďová voda</h3><p>Pomáhame s čerpaním zo studní, vrtov, závlahou a využitím dažďovej vody.</p></article>
+        </div>
+        <div class="section-actions"><a class="button button-primary" href="#contact">Požiadať o návrh riešenia</a></div>
+      </div>
+    </section>
+
+    <section id="why" class="section alt">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="eyebrow">Prečo McPumps</p>
+          <h2>Praktický partner pre čerpadlá, vodné hospodárstvo a technické riešenia</h2>
+          <p>Zakladáme si na férovom odporúčaní, technickom myslení a riešeniach, ktoré majú fungovať aj po dodaní.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card surface"><div class="why-icon" aria-hidden="true"><i data-lucide="wrench"></i></div><h3>Technické skúsenosti</h3><p>Opierame sa o dlhoročnú prax v komunálnom, priemyselnom aj rezidenčnom segmente.</p></article>
+          <article class="why-card surface"><div class="why-icon" aria-hidden="true"><i data-lucide="scale"></i></div><h3>Férový výber riešenia</h3><p>Odporúčame technológiu podľa reálnej potreby, rozpočtu a prevádzkových podmienok.</p></article>
+          <article class="why-card surface"><div class="why-icon" aria-hidden="true"><i data-lucide="handshake"></i></div><h3>Overené partnerstvá</h3><p>Spolupracujeme s výrobcami a technologickými partnermi, ktorí majú praktické riešenia.</p></article>
+          <article class="why-card surface"><div class="why-icon" aria-hidden="true"><i data-lucide="shield-check"></i></div><h3>Servisovateľnosť</h3><p>Myslíme na dostupnosť komponentov, jednoduchšiu údržbu a dlhodobé používanie.</p></article>
+          <article class="why-card surface"><div class="why-icon" aria-hidden="true"><i data-lucide="line-chart"></i></div><h3>Optimalizácia nákladov</h3><p>Pri návrhu aj prevádzke sledujeme spotrebu, efektivitu a možnosti zníženia nákladov.</p></article>
+          <article class="why-card surface"><div class="why-icon" aria-hidden="true"><i data-lucide="map-pin"></i></div><h3>Lokálny prístup zo Senca</h3><p>Čerpaciu techniku riešime pre zákazníkov na Slovensku s dôrazom na rýchlu komunikáciu.</p></article>
+        </div>
+        <div class="section-actions"><a class="button button-primary" href="#contact">Dohodnúť konzultáciu</a><a class="button button-quiet" href="#process">Ako spolupracujeme</a></div>
       </div>
     </section>
 
@@ -163,7 +222,24 @@
     <section id="partners" class="section alt"><div class="container"><div class="section-heading center"><p class="eyebrow">Partneri</p><h2>Spolupracujeme s overenými výrobcami a technologickými partnermi</h2><p>Vďaka partnerstvám vieme priniesť riešenia, ktoré sú dostupné, technicky spoľahlivé a pripravené na reálnu prevádzku.</p></div><div class="partners-strip surface"><img src="images/partner1.png" alt="Partner 1"><img src="images/partner2.png" alt="Partner 2"></div></div></section>
     <section id="contact" class="section"><div class="container contact-layout"><div class="contact-info"><p class="eyebrow">Kontakt</p><h2>Poďme nájsť vhodné riešenie</h2><p>Napíšte nám, čo potrebujete vyriešiť. Ozveme sa vám a navrhneme ďalší praktický postup.</p><a class="contact-line" href="mailto:office@mcpumps.sk">office@mcpumps.sk</a><a class="contact-line" href="tel:+421905693348">+421 905 693 348</a><div class="company-details"><strong>McPumps s.r.o.</strong><span>Vtáčia 6184/20</span><span>903 01 Senec</span><span>Slovenská republika</span><span>IČO: 47566795</span><span>IČ DPH/VAT: SK2023968771</span></div></div><form id="contact-form" class="surface" action="https://formspree.io/f/mzzebnlg" method="POST"><label for="name">Meno</label><input type="text" id="name" name="name" autocomplete="name" required><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required><label for="phone">Telefón</label><input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9 +]{9,15}" required><label for="message">Správa</label><textarea id="message" name="message" required placeholder="Stručne opíšte, aké riešenie hľadáte."></textarea><button class="button button-primary" type="submit">Odoslať správu</button><p id="form-status" role="status" aria-live="polite"></p></form></div></section>
   </main>
-  <footer class="site-footer"><div class="footer-inner"><span>&copy; 2023-2026 McPumps. Všetky práva vyhradené.</span><span>Profesionálne riešenia pre vodné hospodárstvo.</span></div></footer>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">McPumps s.r.o.</div>
+        <p class="footer-slogan">Profesionálne riešenia pre vodné hospodárstvo, čerpadlá a optimalizáciu prevádzky.</p>
+        <div class="footer-contact"><span>Vtáčia 6184/20, 903 01 Senec</span><span>Slovenská republika</span><span>IČO: 47566795</span><span>IČ DPH/VAT: SK2023968771</span></div>
+      </div>
+      <div>
+        <div class="footer-title">Rýchle odkazy</div>
+        <div class="footer-links"><a href="#solutions">Riešenia</a><a href="#services">Služby</a><a href="#why">Prečo McPumps</a><a href="#process">Spolupráca</a><a href="#contact">Kontakt</a></div>
+      </div>
+      <div>
+        <div class="footer-title">Kontakt</div>
+        <div class="footer-contact"><a href="mailto:office@mcpumps.sk">office@mcpumps.sk</a><a href="tel:+421905693348">+421 905 693 348</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2023-2026 McPumps. Všetky práva vyhradené.</span><span>Čerpadlá, monitoring a vodné hospodárstvo.</span></div>
+  </footer>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script>
     if (window.lucide) {

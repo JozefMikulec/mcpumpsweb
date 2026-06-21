@@ -3,7 +3,13 @@
 <head>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <meta name='description' content='McPumps supplies pumping technology and water management solutions for municipalities, industry, households and technical operations.'>
+  <meta name='description' content='McPumps Senec supplies pumps, pumping technology and water management solutions for municipalities, industry, wells, rainwater and technical operations in Slovakia.'>
+  <meta name='keywords' content='pumps Senec, pumping technology Slovakia, water management, industrial pumps, municipal pumps, wells, boreholes, rainwater, pump monitoring'>
+  <meta property='og:title' content='McPumps | Pumps Senec and Pumping Technology Slovakia'>
+  <meta property='og:description' content='Design, delivery, monitoring and optimisation of pumping technology for municipalities, industry and households.'>
+  <meta property='og:type' content='website'>
+  <meta property='og:url' content='https://www.mcpumps.sk/index-en.html'>
+  <meta property='og:image' content='https://www.mcpumps.sk/images/water-background.jpg'>
   <script async src='https://www.googletagmanager.com/gtag/js?id=G-B567QM2NZN'></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,7 +17,7 @@
     gtag('js', new Date());
     gtag('config', 'G-B567QM2NZN');
   </script>
-  <title>McPumps | Water Management Solutions</title>
+  <title>McPumps | Pumps Senec and Pumping Technology Slovakia</title>
   <link rel='icon' href='favicon.png' type='image/png'>
   <style>
     :root { --ink: #102033; --muted: #5f6f82; --navy: #073b66; --blue: #006fae; --aqua: #00a7b5; --mist: #eef7fa; --line: #d9e7ee; --white: #ffffff; --shadow: 0 18px 45px rgba(8, 35, 56, 0.12); }
@@ -42,6 +48,7 @@
     h1 { max-width: 760px; margin-bottom: 22px; font-size: clamp(42px, 7vw, 76px); line-height: 0.98; letter-spacing: 0; }
     .hero-copy { max-width: 650px; margin-bottom: 30px; color: #d7ebf2; font-size: 19px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 42px; }
+    .section-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; justify-content: center; }
     .hero-metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 760px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); border-radius: 8px; overflow: hidden; }
     .metric { padding: 20px; border-right: 1px solid rgba(255, 255, 255, 0.18); }
     .metric:last-child { border-right: 0; }
@@ -68,12 +75,18 @@
     .solution-card { overflow: hidden; display: grid; grid-template-rows: 260px 1fr; }
     .solution-card img { width: 100%; height: 260px; object-fit: cover; }
     .solution-card-content { padding: 28px; }
-    .solution-icon, .process-icon { width: 52px; height: 52px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px; border-radius: 8px; color: var(--blue); background: linear-gradient(135deg, rgba(0, 111, 174, 0.12), rgba(0, 167, 181, 0.12)); border: 1px solid rgba(0, 111, 174, 0.14); }
-    .solution-icon svg, .process-icon svg { width: 28px; height: 28px; stroke-width: 1.8; }
+    .solution-icon, .process-icon, .service-icon, .why-icon { width: 52px; height: 52px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px; border-radius: 8px; color: var(--blue); background: linear-gradient(135deg, rgba(0, 111, 174, 0.12), rgba(0, 167, 181, 0.12)); border: 1px solid rgba(0, 111, 174, 0.14); }
+    .solution-icon svg, .process-icon svg, .service-icon svg, .why-icon svg { width: 28px; height: 28px; stroke-width: 1.8; }
     .solution-card h3 { margin-bottom: 12px; font-size: 24px; line-height: 1.2; }
     .solution-card p { color: var(--muted); }
     .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
     .tag { padding: 6px 10px; border-radius: 999px; background: #eef7fa; color: var(--navy); font-size: 13px; font-weight: 700; }
+    .services-grid, .why-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+    .service-card, .why-card { padding: 24px; min-height: 230px; }
+    .service-card h3, .why-card h3 { margin-bottom: 10px; font-size: 20px; line-height: 1.2; }
+    .service-card p, .why-card p { color: var(--muted); margin-bottom: 0; }
+    .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .why-card { min-height: 210px; }
     .process-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
     .process-step { padding: 24px; border-left: 3px solid var(--aqua); min-height: 190px; }
     .process-step span { color: var(--blue); font-weight: 800; font-size: 14px; }
@@ -95,18 +108,26 @@
     textarea { resize: vertical; min-height: 130px; }
     button:disabled { opacity: 0.72; cursor: wait; transform: none; }
     #form-status { margin: 16px 0 0; color: #9b1c1c; font-weight: 700; }
-    .site-footer { padding: 28px 24px; background: #08253d; color: #c8dbe4; }
-    .footer-inner { width: min(1180px, 100%); margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; align-items: center; flex-wrap: wrap; }
-    @media (max-width: 1020px) { .solutions-grid { grid-template-columns: 1fr; } }
+    .site-footer { padding: 48px 24px 28px; background: #08253d; color: #c8dbe4; }
+    .footer-inner { width: min(1180px, 100%); margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; align-items: start; }
+    .footer-brand { color: var(--white); font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .footer-slogan { max-width: 420px; color: #c8dbe4; margin-bottom: 18px; }
+    .footer-title { color: var(--white); font-weight: 800; margin-bottom: 10px; }
+    .footer-links { display: grid; gap: 8px; }
+    .footer-links a, .footer-contact a { color: #c8dbe4; text-decoration: none; }
+    .footer-contact a { display: block; }
+    .footer-contact span { display: block; }
+    .footer-bottom { width: min(1180px, 100%); margin: 28px auto 0; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.14); display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; font-size: 14px; }
+    @media (max-width: 1020px) { .solutions-grid, .services-grid, .why-grid { grid-template-columns: 1fr; } }
     @media (max-width: 920px) { .nav { align-items: flex-start; } .nav-links { display: none; } .hero { min-height: auto; } .hero-metrics, .split, .process-grid, .contact-layout { grid-template-columns: 1fr; } .metric { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.18); } .metric:last-child { border-bottom: 0; } .photo-stack { grid-template-columns: 1fr; } .photo-stack img, .photo-stack img:last-child, .photo-stack .wide { height: 280px; } }
-    @media (max-width: 640px) { .nav { padding: 12px 18px; flex-wrap: wrap; } .brand { width: 100%; } .nav-actions { width: 100%; justify-content: space-between; } .hero-inner { width: min(100% - 36px, 1180px); padding: 58px 0 70px; } .section { padding: 62px 18px; } h1 { font-size: 42px; } .hero-copy, .section-heading p, .lead { font-size: 17px; } .solution-card { grid-template-rows: 220px 1fr; } .solution-card img { height: 220px; } form, .contact-info, .about-panel { padding: 24px; } }
+    @media (max-width: 640px) { .nav { padding: 12px 18px; flex-wrap: wrap; } .brand { width: 100%; } .nav-actions { width: 100%; justify-content: space-between; } .hero-inner { width: min(100% - 36px, 1180px); padding: 58px 0 70px; } .section { padding: 62px 18px; } h1 { font-size: 42px; } .hero-copy, .section-heading p, .lead { font-size: 17px; } .solution-card { grid-template-rows: 220px 1fr; } .solution-card img { height: 220px; } form, .contact-info, .about-panel { padding: 24px; } .footer-inner { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <header class='site-header'>
     <nav class='nav' aria-label='Main navigation'>
       <a class='brand' href='#top' aria-label='McPumps home'><img src='McPumps_Logo.jpg' alt='McPumps Logo' class='logo'><span><strong>McPumps</strong><span>Water management</span></span></a>
-      <div class='nav-links'><a href='#about'>About</a><a href='#solutions'>Solutions</a><a href='#process'>Process</a><a href='#partners'>Partners</a><a href='#contact'>Contact</a></div>
+      <div class='nav-links'><a href='#about'>About</a><a href='#solutions'>Solutions</a><a href='#services'>Services</a><a href='#why'>Why us</a><a href='#contact'>Contact</a></div>
       <div class='nav-actions'><a class='button button-quiet' href='keenon.html'>KEENON Robotics</a><a class='flag-link' href='index.html' aria-label='Slovak version'><img src='images/slovak-flag.png' alt='Slovak version'></a></div>
     </nav>
   </header>
@@ -114,12 +135,31 @@
   <main id='top'>
     <section class='hero' aria-labelledby='hero-title'><div class='hero-inner'><p class='eyebrow'>Pumping technology and smart solutions</p><h1 id='hero-title'>Reliable water management solutions</h1><p class='hero-copy'>We help municipalities, water utilities, industrial operations and households choose and supply pumping solutions that make sense technically and economically.</p><div class='hero-actions'><a class='button button-primary' href='#contact'>Request a consultation</a><a class='button button-secondary' href='#solutions'>Explore solutions</a></div><div class='hero-metrics' aria-label='McPumps experience'><div class='metric'><strong>18+</strong><span>years of industry experience</span></div><div class='metric'><strong>3</strong><span>core segments: municipal, industry and residential</span></div><div class='metric'><strong>SK/CZ</strong><span>cooperation with proven partners</span></div></div></div></section>
     <section id='about' class='section'><div class='container split'><div class='about-panel surface'><p class='eyebrow'>About us</p><h2>A strong technical solution starts with the right design</h2><p class='lead'>McPumps is a family-owned company focused on sales, delivery and consultation in pumping technology and water management.</p><p>Our experience covers drinking water supply, wastewater transport and treatment, pump monitoring, predictive maintenance and optimisation of operating costs.</p><ul class='check-list'><li>We recommend solutions based on real operating conditions, not a generic catalogue answer.</li><li>We combine municipal and industrial water management know-how with practical solutions for households and smaller facilities.</li><li>We support customers in technology selection, delivery and further system development.</li></ul></div><div class='photo-stack' aria-label='Solution photos'><img src='images/komunalne.jpg' alt='Technical solution for municipal water management'><img src='images/domace.jpg' alt='Pumping solution for household and garden use'><img class='wide' src='images/industry1.jpg' alt='Industrial technology and operational water management'></div></div></section>
-    <section id='solutions' class='section alt'><div class='container'><div class='section-heading center'><p class='eyebrow'>Our solutions</p><h2>From municipal and industrial technologies to efficient household water use</h2><p>We select and combine pumping technology to be reliable, serviceable and appropriate for the purpose of the project.</p></div><div class='solutions-grid'><article class='solution-card surface'><img src='images/komunalne.jpg' alt='Municipal water management'><div class='solution-card-content'><div class='solution-icon' aria-hidden='true'><i data-lucide='droplets'></i></div><h3>Municipal water management</h3><p>We supply pumping technology and related solutions for municipal water companies, infrastructure operators and demanding technical applications.</p><div class='tags'><span class='tag'>drinking water</span><span class='tag'>wastewater</span><span class='tag'>monitoring</span></div></div></article><article class='solution-card surface'><img src='images/industry2.jpg' alt='Industrial water management technology'><div class='solution-card-content'><div class='solution-icon' aria-hidden='true'><i data-lucide='factory'></i></div><h3>Industry and technical operations</h3><p>We support the selection and supply of pumping technology for industrial applications, process units, operational water management and optimisation of existing equipment.</p><div class='tags'><span class='tag'>industry</span><span class='tag'>technology</span><span class='tag'>optimisation</span></div></div></article><article class='solution-card surface'><img src='images/domace1.jpg' alt='Residential pumping solutions'><div class='solution-card-content'><div class='solution-icon' aria-hidden='true'><i data-lucide='house'></i></div><h3>Homes, wells and rainwater</h3><p>We help choose pumps for irrigation, wells and boreholes, rainwater use and dependable household water supply.</p><div class='tags'><span class='tag'>wells</span><span class='tag'>irrigation</span><span class='tag'>rainwater</span></div></div></article></div></div></section>
+    <section id='solutions' class='section alt'><div class='container'><div class='section-heading center'><p class='eyebrow'>Our solutions</p><h2>From municipal and industrial technologies to efficient household water use</h2><p>We select and combine pumping technology to be reliable, serviceable and appropriate for the purpose of the project.</p></div><div class='solutions-grid'><article class='solution-card surface'><img src='images/komunalne.jpg' alt='Municipal water management'><div class='solution-card-content'><div class='solution-icon' aria-hidden='true'><i data-lucide='droplets'></i></div><h3>Municipal water management</h3><p>We supply pumping technology and related solutions for municipal water companies, infrastructure operators and demanding technical applications.</p><div class='tags'><span class='tag'>drinking water</span><span class='tag'>wastewater</span><span class='tag'>monitoring</span></div></div></article><article class='solution-card surface'><img src='images/industry2.jpg' alt='Industrial water management technology'><div class='solution-card-content'><div class='solution-icon' aria-hidden='true'><i data-lucide='factory'></i></div><h3>Industry and technical operations</h3><p>We support the selection and supply of pumping technology for industrial applications, process units, operational water management and optimisation of existing equipment.</p><div class='tags'><span class='tag'>industry</span><span class='tag'>technology</span><span class='tag'>optimisation</span></div></div></article><article class='solution-card surface'><img src='images/domace1.jpg' alt='Residential pumping solutions'><div class='solution-card-content'><div class='solution-icon' aria-hidden='true'><i data-lucide='house'></i></div><h3>Homes, wells and rainwater</h3><p>We help choose pumps for irrigation, wells and boreholes, rainwater use and dependable household water supply.</p><div class='tags'><span class='tag'>wells</span><span class='tag'>irrigation</span><span class='tag'>rainwater</span></div></div></article></div><div class='section-actions'><a class='button button-primary' href='#contact'>Request a consultation</a><a class='button button-quiet' href='#services'>View specific services</a></div></div></section>
+    <section id='services' class='section'><div class='container'><div class='section-heading'><p class='eyebrow'>Specific services</p><h2>Pumping technology from design to operational optimisation</h2><p>We help with pump selection, solution design, technology delivery, monitoring and improvement of existing operations.</p></div><div class='services-grid'><article class='service-card surface'><div class='service-icon' aria-hidden='true'><i data-lucide='drafting-compass'></i></div><h3>Pump system design</h3><p>We assess operating conditions and propose a technically appropriate solution.</p></article><article class='service-card surface'><div class='service-icon' aria-hidden='true'><i data-lucide='package-check'></i></div><h3>Pump delivery</h3><p>We supply pumps and related components for municipalities, industry and households.</p></article><article class='service-card surface'><div class='service-icon' aria-hidden='true'><i data-lucide='monitor'></i></div><h3>Pump monitoring</h3><p>We support solutions for tracking equipment condition, operation and reliability.</p></article><article class='service-card surface'><div class='service-icon' aria-hidden='true'><i data-lucide='trending-up'></i></div><h3>Operational optimisation</h3><p>We look for savings, better settings and long-term serviceability.</p></article><article class='service-card surface'><div class='service-icon' aria-hidden='true'><i data-lucide='cloud-rain'></i></div><h3>Wells and rainwater</h3><p>We help with wells, boreholes, irrigation and rainwater use.</p></article></div><div class='section-actions'><a class='button button-primary' href='#contact'>Request a solution proposal</a></div></div></section>
+    <section id='why' class='section alt'><div class='container'><div class='section-heading center'><p class='eyebrow'>Why McPumps</p><h2>A practical partner for pumps, water management and technical solutions</h2><p>We focus on fair recommendations, technical thinking and solutions designed to work after delivery.</p></div><div class='why-grid'><article class='why-card surface'><div class='why-icon' aria-hidden='true'><i data-lucide='wrench'></i></div><h3>Technical experience</h3><p>We build on long-term practice in municipal, industrial and residential segments.</p></article><article class='why-card surface'><div class='why-icon' aria-hidden='true'><i data-lucide='scale'></i></div><h3>Fair solution selection</h3><p>We recommend technology based on real needs, budget and operating conditions.</p></article><article class='why-card surface'><div class='why-icon' aria-hidden='true'><i data-lucide='handshake'></i></div><h3>Proven partnerships</h3><p>We cooperate with manufacturers and technology partners with practical solutions.</p></article><article class='why-card surface'><div class='why-icon' aria-hidden='true'><i data-lucide='shield-check'></i></div><h3>Serviceability</h3><p>We consider component availability, easier maintenance and long-term use.</p></article><article class='why-card surface'><div class='why-icon' aria-hidden='true'><i data-lucide='line-chart'></i></div><h3>Cost optimisation</h3><p>In design and operation, we monitor consumption, efficiency and potential savings.</p></article><article class='why-card surface'><div class='why-icon' aria-hidden='true'><i data-lucide='map-pin'></i></div><h3>Local approach from Senec</h3><p>We support pumping technology projects in Slovakia with clear and responsive communication.</p></article></div><div class='section-actions'><a class='button button-primary' href='#contact'>Book a consultation</a><a class='button button-quiet' href='#process'>How we work</a></div></div></section>
     <section id='process' class='section'><div class='container'><div class='section-heading'><p class='eyebrow'>How we work</p><h2>We quickly understand the task and recommend a practical next step</h2></div><div class='process-grid'><article class='process-step surface'><span>01</span><div class='process-icon' aria-hidden='true'><i data-lucide='messages-square'></i></div><h3>Consultation</h3><p>We review the requirement, operating conditions and expected result.</p></article><article class='process-step surface'><span>02</span><div class='process-icon' aria-hidden='true'><i data-lucide='drafting-compass'></i></div><h3>Solution design</h3><p>We select suitable technology and recommend a clean technical approach.</p></article><article class='process-step surface'><span>03</span><div class='process-icon' aria-hidden='true'><i data-lucide='package-check'></i></div><h3>Delivery</h3><p>We arrange pumping technology and related components as agreed.</p></article><article class='process-step surface'><span>04</span><div class='process-icon' aria-hidden='true'><i data-lucide='activity'></i></div><h3>Optimisation</h3><p>For existing equipment we look for savings, monitoring and maintenance improvements.</p></article></div></div></section>
     <section id='partners' class='section alt'><div class='container'><div class='section-heading center'><p class='eyebrow'>Partners</p><h2>We cooperate with proven manufacturers and technology partners</h2><p>Our partnerships help us bring solutions that are available, technically reliable and ready for real operation.</p></div><div class='partners-strip surface'><img src='images/partner1.png' alt='Partner 1'><img src='images/partner2.png' alt='Partner 2'></div></div></section>
     <section id='contact' class='section'><div class='container contact-layout'><div class='contact-info'><p class='eyebrow'>Contact</p><h2>Let us find the right solution</h2><p>Tell us what you need to solve. We will get back to you and suggest a practical next step.</p><a class='contact-line' href='mailto:office@mcpumps.sk'>office@mcpumps.sk</a><a class='contact-line' href='tel:+421905693348'>+421 905 693 348</a><div class='company-details'><strong>McPumps s.r.o.</strong><span>Vtáčia 6184/20</span><span>903 01 Senec</span><span>Slovak Republic</span><span>Company ID: 47566795</span><span>VAT ID: SK2023968771</span></div></div><form id='contact-form' class='surface' action='https://formspree.io/f/mzzebnlg' method='POST'><label for='name'>Name</label><input type='text' id='name' name='name' autocomplete='name' required><label for='email'>Email</label><input type='email' id='email' name='email' autocomplete='email' required><label for='phone'>Phone</label><input type='tel' id='phone' name='phone' autocomplete='tel' pattern='[0-9 +]{9,15}' required><label for='message'>Message</label><textarea id='message' name='message' required placeholder='Briefly describe the solution you are looking for.'></textarea><button class='button button-primary' type='submit'>Send message</button><p id='form-status' role='status' aria-live='polite'></p></form></div></section>
   </main>
-  <footer class='site-footer'><div class='footer-inner'><span>&copy; 2023-2026 McPumps. All rights reserved.</span><span>Professional solutions for water management.</span></div></footer>
+  <footer class='site-footer'>
+    <div class='footer-inner'>
+      <div>
+        <div class='footer-brand'>McPumps s.r.o.</div>
+        <p class='footer-slogan'>Professional solutions for water management, pumps and operational optimisation.</p>
+        <div class='footer-contact'><span>Vtáčia 6184/20, 903 01 Senec</span><span>Slovak Republic</span><span>Company ID: 47566795</span><span>VAT ID: SK2023968771</span></div>
+      </div>
+      <div>
+        <div class='footer-title'>Quick links</div>
+        <div class='footer-links'><a href='#solutions'>Solutions</a><a href='#services'>Services</a><a href='#why'>Why McPumps</a><a href='#process'>Process</a><a href='#contact'>Contact</a></div>
+      </div>
+      <div>
+        <div class='footer-title'>Contact</div>
+        <div class='footer-contact'><a href='mailto:office@mcpumps.sk'>office@mcpumps.sk</a><a href='tel:+421905693348'>+421 905 693 348</a></div>
+      </div>
+    </div>
+    <div class='footer-bottom'><span>&copy; 2023-2026 McPumps. All rights reserved.</span><span>Pumps, monitoring and water management.</span></div>
+  </footer>
   <script src='https://unpkg.com/lucide@latest/dist/umd/lucide.min.js'></script>
   <script>
     if (window.lucide) {
